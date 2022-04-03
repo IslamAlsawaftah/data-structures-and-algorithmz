@@ -53,7 +53,7 @@ namespace ConsoleApp.Challenges.linkedlist
         }
         public string ToString()
         {
-            string str = "";
+            string str = "head -> ";
             // temp reference to the head node 
             if (head == null)
             {
@@ -69,8 +69,72 @@ namespace ConsoleApp.Challenges.linkedlist
                     temp = temp.next;
                 }
             }
-            str += "NULL";
+            str += "X";
             return str;
+        }
+        public void Append(string value)
+        {
+            Node newNode = new Node(value); // create new node 
+            newNode.next = null; // we set node that comes after appended node to be null
+            if (head == null) // if we dont have nodes inside linked list:  head -> [5] -> X
+            {
+                head = newNode;
+            }
+            else // if we have nodes inside linked list: head -> [1] -> [3] -> [2] -> [5] -> X
+            {
+                Node temp = new Node(value);
+                temp = head;
+                while (temp.next != null)
+                    temp = temp.next;
+                temp.next = newNode;
+            }
+        }
+
+        public void InsertBefore(string value, string NewValue)
+        {
+            Node current = head; // start from head 
+            Node temp = new Node(NewValue);
+            if (head.data == value)
+            {
+                temp.next = head;
+                head = temp;
+            }
+            if (current.next.data != value)
+            {
+                Console.Write("value does'nt exist in list");
+            }
+            while (current.next != null)
+            {
+                if (current.next.data == value)
+                {
+                    temp.next = current.next;
+                    current.next = temp;
+                    break;
+                }
+                current = current.next;    // move  to the next node
+            }
+
+
+        }
+
+        public void InsertAfter(string value, string NewValue)
+        {
+            Node temp = new Node(NewValue);
+            Node current = head;
+            if (current.data != value)
+            {
+                Console.Write("value does'nt exist in list");
+            }
+            while (current != null)
+            {
+                if (current.data == value)
+                {
+                    temp.next = current.next;
+                    current.next = temp;
+                    break;
+                }
+                current = current.next;
+            }
         }
     }
 }
