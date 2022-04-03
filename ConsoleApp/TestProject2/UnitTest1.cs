@@ -6,86 +6,58 @@ namespace TestProject2
     public class UnitTest1
     {
         [Fact]
-        public void TestAppend()
+        public void TestkGreaterThanList()
         {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can append into the linked list
-            list.Append("5");
-            //Can successfully add a node to the end of the linked list
-            Assert.Equal("head -> [5] -> X", list.ToString());
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(2);
+            linkedList.Insert(8);
+            linkedList.Insert(3);
+            linkedList.Insert(1);
+            //  k is greater than the length of the linked list
+            Assert.Equal(0, linkedList.kthFromEnd(11));
         }
         [Fact]
-        public void TestAppendMultipleNode()
+        public void TestkEqualList()
         {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can append into the linked list
-            list.Insert("2");
-            list.Insert("3");
-            list.Insert("1");
-            list.Append("5");
-            //Can successfully add multiple nodes to the end of a linked list
-            Assert.Equal("head -> [1] -> [3] -> [2] -> [5] -> X", list.ToString());
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(2);
+            linkedList.Insert(8);
+            linkedList.Insert(3);
+            linkedList.Insert(1);
+            //  k is greater than the length of the linked list
+            Assert.Equal(0, linkedList.kthFromEnd(4));
         }
         [Fact]
-        public void TestInsertBeforeMiddle()
+        public void TestkNegative()
         {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can insert before middle the linked list
-            list.Insert("3");
-            list.Insert("5");
-            list.Insert("2");
-            list.Insert("1");
-            list.Insert("4");
-            list.InsertBefore("2", "10");
-            //Can successfully add node begore middle of the linked list
-            Assert.Equal("head -> [4] -> [1] -> [10] -> [2] -> [5] -> [3] -> X", list.ToString());
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(2);
+            linkedList.Insert(8);
+            linkedList.Insert(3);
+            linkedList.Insert(1);
+            //  k is not a positive integer
+            Assert.Equal(0, linkedList.kthFromEnd(-1));
         }
+        [Fact]
+        public void TestLinkedListSizeOne()
+        {
+            LinkedList linkedList = new LinkedList();
 
-        [Fact]
-        public void TestInsertBeforeFirst()
-        {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can insert before first in the linked list
-            list.Insert("2");
-            list.Insert("3");
-            list.Insert("4");
-            list.InsertBefore("4", "10");
-            //Can successfully insert a node before the first node of a linked list
-            Assert.Equal("head -> [10] -> [4] -> [3] -> [2] -> X", list.ToString());
+            linkedList.Insert(3);
+            //   linked list is of a size 1
+            Assert.Equal(3, linkedList.kthFromEnd(0));
         }
-
         [Fact]
-        public void TestInsertAfterMiddle()
+        public void TestkNotAtTheEnd()
         {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can insert after middle the linked list
-            list.Insert("3");
-            list.Insert("5");
-            list.Insert("2");
-            list.Insert("1");
-            list.Insert("4");
-            list.InsertAfter("2", "10");
-            //Can successfully insert after a node in the middle of the linked list
-            Assert.Equal("head -> [4] -> [1] -> [2] -> [10] -> [5] -> [3] -> X", list.ToString());
-        }
-
-        [Fact]
-        public void TestInsertAfterLast()
-        {
-            //instantiate an empty linked list
-            LinkedList list = new LinkedList();
-            // can append into the linked list
-            list.Insert("3");
-            list.Insert("2");
-            list.Insert("1");
-            list.InsertAfter("3", "10");
-            //Can successfully insert a node after the last node of the linked list
-            Assert.Equal("head -> [1] -> [2] -> [3] -> [10] -> X", list.ToString());
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(2);
+            linkedList.Insert(8);
+            linkedList.Insert(14);
+            linkedList.Insert(3);
+            linkedList.Insert(1);
+            //  k is in the middle of the linked list
+            Assert.Equal(14, linkedList.kthFromEnd(2));
         }
     }
 }
