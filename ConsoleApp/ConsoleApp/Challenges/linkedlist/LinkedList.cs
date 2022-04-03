@@ -13,7 +13,7 @@ namespace ConsoleApp.Challenges.linkedlist
         {
             head = null;
         }
-        public void Insert(string value)
+        public void Insert(int value)
         {
             try
             {
@@ -26,31 +26,31 @@ namespace ConsoleApp.Challenges.linkedlist
                 Console.WriteLine(ex.Message);
             }
         }
-        public bool Includes(string value)
-        {
-            // Function to Search the list.
-            Node temp = head;
+        //public bool Includes(string value)
+        //{
+        //    // Function to Search the list.
+        //    Node temp = head;
 
-            // if the list is empty
-            if (head.data == null)
-            {
-                Console.WriteLine("Nothing Found, List Is Empty");
-            }
-            else
-            {
-                while (temp != null)
-                {
-                    if (temp.data == value)
-                    {
-                        Console.WriteLine(value + " is in the list!");
-                        return true;
-                    }
-                    temp = temp.next;
-                }
-            }
-            Console.WriteLine(value + " not in the list. ");
-            return false;
-        }
+        //    // if the list is empty
+        //    if (head.data == null)
+        //    {
+        //        Console.WriteLine("Nothing Found, List Is Empty");
+        //    }
+        //    else
+        //    {
+        //        while (temp != null)
+        //        {
+        //            if (temp.data == value)
+        //            {
+        //                Console.WriteLine(value + " is in the list!");
+        //                return true;
+        //            }
+        //            temp = temp.next;
+        //        }
+        //    }
+        //    Console.WriteLine(value + " not in the list. ");
+        //    return false;
+        //}
         public string ToString()
         {
             string str = "head -> ";
@@ -72,69 +72,97 @@ namespace ConsoleApp.Challenges.linkedlist
             str += "X";
             return str;
         }
-        public void Append(string value)
-        {
-            Node newNode = new Node(value); // create new node 
-            newNode.next = null; // we set node that comes after appended node to be null
-            if (head == null) // if we dont have nodes inside linked list:  head -> [5] -> X
-            {
-                head = newNode;
-            }
-            else // if we have nodes inside linked list: head -> [1] -> [3] -> [2] -> [5] -> X
-            {
-                Node temp = new Node(value);
-                temp = head;
-                while (temp.next != null)
-                    temp = temp.next;
-                temp.next = newNode;
-            }
-        }
+        //public void Append(string value)
+        //{
+        //    Node newNode = new Node(value); // create new node 
+        //    newNode.next = null; // we set node that comes after appended node to be null
+        //    if (head == null) // if we dont have nodes inside linked list:  head -> [5] -> X
+        //    {
+        //        head = newNode;
+        //    }
+        //    else // if we have nodes inside linked list: head -> [1] -> [3] -> [2] -> [5] -> X
+        //    {
+        //        Node temp = new Node(value);
+        //        temp = head;
+        //        while (temp.next != null)
+        //            temp = temp.next;
+        //        temp.next = newNode;
+        //    }
+        //}
 
-        public void InsertBefore(string value, string NewValue)
-        {
-            Node current = head; // start from head 
-            Node temp = new Node(NewValue);
-            if (head.data == value)
+        //public void InsertBefore(string value, string NewValue)
+        //{
+        //    Node current = head; // start from head 
+        //    Node temp = new Node(NewValue);
+        //    if (head.data == value)
+        //    {
+        //        temp.next = head;
+        //        head = temp;
+        //    }
+        //    if (current.next.data != value)
+        //    {
+        //        Console.Write("value does'nt exist in list");
+        //    }
+        //    while (current.next != null)
+        //    {
+        //        if (current.next.data == value)
+        //        {
+        //            temp.next = current.next;
+        //            current.next = temp;
+        //            break;
+        //        }
+        //        current = current.next;    // move  to the next node
+        //    }
+
+
+        //}
+
+        //public void InsertAfter(string value, string NewValue)
+        //{
+        //    Node temp = new Node(NewValue);
+        //    Node current = head;
+        //    if (current.data != value)
+        //    {
+        //        Console.Write("value does'nt exist in list");
+        //    }
+        //    while (current != null)
+        //    {
+        //        if (current.data == value)
+        //        {
+        //            temp.next = current.next;
+        //            current.next = temp;
+        //            break;
+        //        }
+        //        current = current.next;
+        //    }
+        //}
+          /* Function to get the nth node from the last of a
+    linked list */
+            public int kthFromEnd(int index)
             {
-                temp.next = head;
-                head = temp;
-            }
-            if (current.next.data != value)
-            {
-                Console.Write("value does'nt exist in list");
-            }
-            while (current.next != null)
-            {
-                if (current.next.data == value)
+                Node p = head, n = null;
+                while (p != null)
                 {
-                    temp.next = current.next;
-                    current.next = temp;
-                    break;
+                    Node tmp = p.next;
+                    p.next = n;
+                    n = p;
+                    p = tmp;
                 }
-                current = current.next;    // move  to the next node
-            }
+                head = n;
+                Node current = head;
 
-
-        }
-
-        public void InsertAfter(string value, string NewValue)
-        {
-            Node temp = new Node(NewValue);
-            Node current = head;
-            if (current.data != value)
-            {
-                Console.Write("value does'nt exist in list");
-            }
-            while (current != null)
-            {
-                if (current.data == value)
+                // Index of Node we are
+                // currently looking at
+                int count = 0;
+                while (current != null)
                 {
-                    temp.next = current.next;
-                    current.next = temp;
-                    break;
+                    if (count == index)
+                        return current.data;
+                    count++;
+                    current = current.next;
                 }
-                current = current.next;
+                Console.WriteLine("Index out of range");
+                return 0;
             }
-        }
     }
 }

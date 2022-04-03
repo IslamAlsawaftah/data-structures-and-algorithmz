@@ -8,6 +8,6 @@
 | 3      | Array Binary Search | [Link](ConsoleApp/ConsoleApp/Challenges/array-binary-search/README.md) |
 | 4      | Linked List Implementation | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/README.md) |
 | 5      | Linked List Insertion Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-insertion/READEME.md)
-
+| 6      | Linked List kthFromEnd Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-kth/READEME.md)
 
 
