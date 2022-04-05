@@ -14,7 +14,7 @@ namespace TestProject2
             linkedList.Insert(3);
             linkedList.Insert(1);
             //  k is greater than the length of the linked list
-            Assert.Equal(0, linkedList.kthFromEnd(11));
+            Assert.Equal("Index out of range", linkedList.kthFromEnd(11));
         }
         [Fact]
         public void TestkEqualList()
