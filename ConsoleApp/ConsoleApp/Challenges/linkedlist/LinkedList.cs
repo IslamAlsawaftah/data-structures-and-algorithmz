@@ -138,31 +138,36 @@ namespace ConsoleApp.Challenges.linkedlist
         //}
         /* Function to get the nth node from the last of a
   linked list */
-        public int kthFromEnd(int index)
+        public object kthFromEnd(int index)
         {
-            Node p = head, n = null;
-            while (p != null)
+            try
             {
-                Node tmp = p.next;
-                p.next = n;
-                n = p;
-                p = tmp;
-            }
-            head = n;
-            Node current = head;
+                Node p = head, n = null;
+                while (p != null)
+                {
+                    Node tmp = p.next;
+                    p.next = n;
+                    n = p;
+                    p = tmp;
+                }
+                head = n;
+                Node current = head;
 
-            // Index of Node we are
-            // currently looking at
-            int count = 0;
-            while (current != null)
+                // Index of Node we are
+                // currently looking at
+                int count = 0;
+                while (current != null)
+                {
+                    if (count == index)
+                        return current.data;
+                    count++;
+                    current = current.next;
+                }
+                return current.data;
+            } catch (Exception message)
             {
-                if (count == index)
-                    return current.data;
-                count++;
-                current = current.next;
+                return "Index out of range" + message;
             }
-            Console.WriteLine("Index out of range");
-            return 0;
         }
     }
 }
