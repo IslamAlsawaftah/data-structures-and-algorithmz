@@ -9,5 +9,6 @@
 | 4      | Linked List Implementation | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/README.md) |
 | 5      | Linked List Insertion Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-insertion/READEME.md)
 | 6      | Linked List kthFromEnd Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-kth/READEME.md)
+| 6      | Linked List Zipped List Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-zip/READEME.md)
 
 
