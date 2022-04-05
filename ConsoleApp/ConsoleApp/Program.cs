@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.Challenges.linkedlist;
+using System.Collections.Generic;
 using System;
 
 namespace ConsoleApp
@@ -7,16 +8,16 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            LinkedList linkedList = new LinkedList();
-            linkedList.Insert("2");
-            linkedList.Insert("3");
-            linkedList.Insert("4");
-            //linkedList.Append("5");
-            //linkedList.InsertBefore("11", "6");
-            linkedList.InsertAfter("4", "10");
-            Console.Write(linkedList.ToString());
-            Console.WriteLine();
-            //linkedList.Includes("b");
+              LinkedList linkedList = new LinkedList();
+                linkedList.Insert(2);
+                linkedList.Insert(8);
+                linkedList.Insert(11);
+                linkedList.Insert(3);
+                Console.WriteLine(linkedList.ToString()); 
+                Console.WriteLine();
+                Console.Write(linkedList.kthFromEnd(0));
+                Console.WriteLine(); 
+           
         }
     }
 }
