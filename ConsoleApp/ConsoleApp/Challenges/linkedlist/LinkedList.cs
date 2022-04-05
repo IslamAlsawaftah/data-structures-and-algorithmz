@@ -136,33 +136,33 @@ namespace ConsoleApp.Challenges.linkedlist
         //        current = current.next;
         //    }
         //}
-          /* Function to get the nth node from the last of a
-    linked list */
-            public int kthFromEnd(int index)
+        /* Function to get the nth node from the last of a
+  linked list */
+        public int kthFromEnd(int index)
+        {
+            Node p = head, n = null;
+            while (p != null)
             {
-                Node p = head, n = null;
-                while (p != null)
-                {
-                    Node tmp = p.next;
-                    p.next = n;
-                    n = p;
-                    p = tmp;
-                }
-                head = n;
-                Node current = head;
-
-                // Index of Node we are
-                // currently looking at
-                int count = 0;
-                while (current != null)
-                {
-                    if (count == index)
-                        return current.data;
-                    count++;
-                    current = current.next;
-                }
-                Console.WriteLine("Index out of range");
-                return 0;
+                Node tmp = p.next;
+                p.next = n;
+                n = p;
+                p = tmp;
             }
+            head = n;
+            Node current = head;
+
+            // Index of Node we are
+            // currently looking at
+            int count = 0;
+            while (current != null)
+            {
+                if (count == index)
+                    return current.data;
+                count++;
+                current = current.next;
+            }
+            Console.WriteLine("Index out of range");
+            return 0;
+        }
     }
 }
