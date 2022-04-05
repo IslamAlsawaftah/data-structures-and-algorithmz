@@ -53,7 +53,7 @@ namespace ConsoleApp.Challenges.linkedlist
         //}
         public string ToString()
         {
-            string str = "head -> ";
+            string str = "";
             // temp reference to the head node 
             if (head == null)
             {
@@ -69,26 +69,26 @@ namespace ConsoleApp.Challenges.linkedlist
                     temp = temp.next;
                 }
             }
-            str += "X";
+            str += "null";
             return str;
         }
-        //public void Append(string value)
-        //{
-        //    Node newNode = new Node(value); // create new node 
-        //    newNode.next = null; // we set node that comes after appended node to be null
-        //    if (head == null) // if we dont have nodes inside linked list:  head -> [5] -> X
-        //    {
-        //        head = newNode;
-        //    }
-        //    else // if we have nodes inside linked list: head -> [1] -> [3] -> [2] -> [5] -> X
-        //    {
-        //        Node temp = new Node(value);
-        //        temp = head;
-        //        while (temp.next != null)
-        //            temp = temp.next;
-        //        temp.next = newNode;
-        //    }
-        //}
+        public void Append(int value)
+        {
+            Node newNode = new Node(value); // create new node 
+            newNode.next = null; // we set node that comes after appended node to be null
+            if (head == null) // if we dont have nodes inside linked list:  head -> [5] -> X
+            {
+                head = newNode;
+            }
+            else // if we have nodes inside linked list: head -> [1] -> [3] -> [2] -> [5] -> X
+            {
+                Node temp = new Node(value);
+                temp = head;
+                while (temp.next != null)
+                    temp = temp.next;
+                temp.next = newNode;
+            }
+        }
 
         //public void InsertBefore(string value, string NewValue)
         //{
@@ -138,36 +138,59 @@ namespace ConsoleApp.Challenges.linkedlist
         //}
         /* Function to get the nth node from the last of a
   linked list */
-        public object kthFromEnd(int index)
-        {
-            try
-            {
-                Node p = head, n = null;
-                while (p != null)
-                {
-                    Node tmp = p.next;
-                    p.next = n;
-                    n = p;
-                    p = tmp;
-                }
-                head = n;
-                Node current = head;
+        //public object kthFromEnd(int index)
+        //{
+        //    try
+        //    {
+        //        Node p = head, n = null;
+        //        while (p != null)
+        //        {
+        //            Node tmp = p.next;
+        //            p.next = n;
+        //            n = p;
+        //            p = tmp;
+        //        }
+        //        head = n;
+        //        Node current = head;
 
-                // Index of Node we are
-                // currently looking at
-                int count = 0;
-                while (current != null)
-                {
-                    if (count == index)
-                        return current.data;
-                    count++;
-                    current = current.next;
-                }
-                return current.data;
-            } catch (Exception message)
+        //        // Index of Node we are
+        //        // currently looking at
+        //        int count = 0;
+        //        while (current != null)
+        //        {
+        //            if (count == index)
+        //                return current.data;
+        //            count++;
+        //            current = current.next;
+        //        }
+        //        return current.data;
+        //    } catch (Exception message)
+        //    {
+        //        return "Index out of range" + message;
+        //    }
+        //}
+        public LinkedList ZipLists(LinkedList list1, LinkedList list2)
+        {
+            LinkedList list3 = new LinkedList();
+            Node curr1 = list1.head;
+            Node curr2 = list2.head;
+            int value;
+            while (curr1 != null || curr2 != null)
             {
-                return "Index out of range" + message;
+                if (curr1 != null)
+                {
+                    value = curr1.data;
+                    Append(value);
+                    curr1 = curr1.next;
+                }
+                if (curr2 != null)
+                {
+                    value = curr2.data;
+                    Append(value);
+                    curr2 = curr2.next;
+                }
             }
+            return list3;
         }
     }
 }
