@@ -7,7 +7,7 @@
  
 | Method | Summary | Big O Time | Big O Space |  
 | ----------- | ----------- | ----------- |  ----------- |
-| list.ZipLists(list1,list2) | return zipped list | O(n) | O(1) |
+| list.ZipLists(list1,list2) | return zipped list | O(n) | O(n) |
 
 
 ## Solution
