@@ -1,12 +1,14 @@
-using System;
-using Xunit;
+using ConsoleApp;
 using ConsoleApp.Challenges.linkedlist;
+using System;
+
+using Xunit;
 namespace TestProject2
 {
     public class UnitTest1
     {
-       [Fact]
-       public void TestZipped1()
+        [Fact]
+        public void TestZipped1()
         {
             LinkedList list = new LinkedList();
             list.Insert(2);
@@ -19,8 +21,8 @@ namespace TestProject2
             list1.Insert(5);
 
             LinkedList list2 = new LinkedList();
-            list2.ZipLists(list, list1);
-            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [2] -> [4] -> null", list2.ToString());
+            var result = Program.ZipLists(list, list1);
+            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [2] -> [4] -> null", result.ToString());
         }
         [Fact]
         public void TestZipped2()
@@ -35,8 +37,8 @@ namespace TestProject2
             list1.Insert(5);
 
             LinkedList list2 = new LinkedList();
-            list2.ZipLists(list, list1);
-            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [4] -> null", list2.ToString());
+            var result = Program.ZipLists(list, list1);
+            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [4] -> null", result.ToString());
         }
         [Fact]
         public void TestZipped3()
@@ -51,8 +53,8 @@ namespace TestProject2
             list1.Insert(5);
 
             LinkedList list2 = new LinkedList();
-            list2.ZipLists(list, list1);
-            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [2] -> null", list2.ToString());
+            var result = Program.ZipLists(list, list1);
+            Assert.Equal("[1] -> [5] -> [3] -> [9] -> [2] -> null", result.ToString());
         }
     }
 }
