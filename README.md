@@ -10,5 +10,5 @@
 | 5      | Linked List Insertion Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-insertion/READEME.md)
 | 6      | Linked List kthFromEnd Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-kth/READEME.md)
 | 6      | Linked List Zipped List Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-zip/READEME.md)
-
+| 7      | Stack and Queue Method | [Link](ConsoleApp/ConsoleApp/Challenges/stacksandqueues/README.md) |
 
