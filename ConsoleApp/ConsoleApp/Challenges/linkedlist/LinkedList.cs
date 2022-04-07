@@ -8,7 +8,7 @@ namespace ConsoleApp.Challenges.linkedlist
 {
     public class LinkedList
     {
-        Node head; // reference to head node 
+        public  Node head; // reference to head node 
         public LinkedList() // contructor to intialize head to null 
         {
             head = null;
@@ -72,7 +72,7 @@ namespace ConsoleApp.Challenges.linkedlist
             str += "null";
             return str;
         }
-        public void Append(int value)
+        public  void Append(int value)
         {
             Node newNode = new Node(value); // create new node 
             newNode.next = null; // we set node that comes after appended node to be null
@@ -169,28 +169,6 @@ namespace ConsoleApp.Challenges.linkedlist
         //        return "Index out of range" + message;
         //    }
         //}
-        public LinkedList ZipLists(LinkedList list1, LinkedList list2)
-        {
-            LinkedList list3 = new LinkedList();
-            Node curr1 = list1.head;
-            Node curr2 = list2.head;
-            int value;
-            while (curr1 != null || curr2 != null)
-            {
-                if (curr1 != null)
-                {
-                    value = curr1.data;
-                    Append(value);
-                    curr1 = curr1.next;
-                }
-                if (curr2 != null)
-                {
-                    value = curr2.data;
-                    Append(value);
-                    curr2 = curr2.next;
-                }
-            }
-            return list3;
-        }
+       
     }
 }
