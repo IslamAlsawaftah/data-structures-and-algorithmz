@@ -24,7 +24,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
         {
             if (top == null)
             {
-                throw new Exception("Stack is empty!"); // raise exception when called on empty stack
+                throw new Exception("Stack is empty!");
 
             }
             Node temp = top;
@@ -36,7 +36,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
         {
             if (top == null)
             {
-                throw new Exception("Stack is empty!"); // raise exception when called on empty stack
+                throw new Exception("Stack is empty!");
 
             }
             return top.data;
@@ -48,12 +48,11 @@ namespace ConsoleApp.Challenges.stacksandqueues
         public string ToString()
         {
             string str = "";
-            // temp reference to the head node 
             if (top == null)
             {
                 return "Stack is empty";
             }
-            else  // loop through list 
+            else 
             {
                 Node temp = top;
                 while (temp != null)
