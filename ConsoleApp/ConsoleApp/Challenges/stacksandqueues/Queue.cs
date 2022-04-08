@@ -10,7 +10,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
     public class Queue
     {
         public Node front { get; set; } // top property
-        public Node rear { get; set; } // top property
+        public Node rear { get; set; }
 
         public Queue()
         {
@@ -31,7 +31,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
         {
             if (front == null)
             {
-                throw new Exception("Queue is empty!"); // raise exception when called on empty stack
+                throw new Exception("Queue is empty!");
 
             }
             Node temp = front;
@@ -43,7 +43,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
         {
             if (front == null)
             {
-                throw new Exception("Queue is empty!"); // raise exception when called on empty stack
+                throw new Exception("Queue is empty!");
 
             }
             return front.data;
@@ -55,12 +55,11 @@ namespace ConsoleApp.Challenges.stacksandqueues
         public string ToString()
         {
             string str = "";
-            // temp reference to the head node 
             if (front == null)
             {
                 return "Queue is empty";
             }
-            else  // loop through list 
+            else 
             {
                 Node temp = front;
                 while (temp != null)
