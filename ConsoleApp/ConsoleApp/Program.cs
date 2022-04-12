@@ -1,5 +1,7 @@
 ﻿using ConsoleApp.Challenges.linkedlist;
+using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
+
 using System;
 
 namespace ConsoleApp
@@ -33,16 +35,24 @@ namespace ConsoleApp
             stack.push(3);
             stack.push(2);
             stack.push(1);
-            Console.WriteLine(stack.ToString());
+            //Console.WriteLine(stack.ToString());
 
             Queue queue = new Queue();
             queue.enqueue(1);
             queue.enqueue(2);
             queue.enqueue(3);   
-            Console.WriteLine(queue.ToString());
+            //Console.WriteLine(queue.ToString());
+
+            PseudoQueue q = new PseudoQueue();
+            q.Enqueue(1);
+            q.Enqueue(2);
+            q.Enqueue(3);
+            Console.WriteLine("Peek is :" + q.Peek());
+            q.Dequeue();
+            Console.WriteLine("Peek after Dequeue is :" + q.Peek());
 
         }
-         public static LinkedList ZipLists(LinkedList list1, LinkedList list2)
+        public static LinkedList ZipLists(LinkedList list1, LinkedList list2)
         {
             LinkedList list3 = new LinkedList();
             Node curr1 = list1.head;
