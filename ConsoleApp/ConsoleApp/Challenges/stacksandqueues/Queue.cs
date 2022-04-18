@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.Challenges.linkedlist;
+using ConsoleApp.Challenges.stack_queue_animal_shelter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace ConsoleApp.Challenges.stacksandqueues
             rear.next = node;
             rear = node;
         }
+
         public int dequeue()
         {
             if (front == null)

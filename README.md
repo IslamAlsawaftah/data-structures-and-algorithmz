@@ -12,5 +12,6 @@
 | 7      | Linked List Zipped List Method | [Link](ConsoleApp/ConsoleApp/Challenges/linkedlist/linked-list-zip/READEME.md)
 | 8      | Stack and Queue Method | [Link](ConsoleApp/ConsoleApp/Challenges/stacksandqueues/README.md) |
 | 9      | Stack and Queue Pseudo Method | [Link](ConsoleApp/ConsoleApp/Challenges/stackqueuepseudo/README.md) |
+| 10     | Stack Queue Animal Shelter | [Link](ConsoleApp/ConsoleApp/Challenges/stack-queue-animal-shelter/README.md) |
 
 
