@@ -1,9 +1,9 @@
 ﻿using ConsoleApp.Challenges.linkedlist;
-using ConsoleApp.Challenges.stack_queue_animal_shelter;
 using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
 
 using System;
+//using System.Collections.Generic;
 
 namespace ConsoleApp
 {
@@ -48,12 +48,44 @@ namespace ConsoleApp
             q.Enqueue(1);
             q.Enqueue(2);
             q.Enqueue(3);
-            Console.WriteLine("Peek is :" + q.Peek());
+            //Console.WriteLine("Peek is :" + q.Peek());
             q.Dequeue();
-            Console.WriteLine("Peek after Dequeue is :" + q.Peek());
+            //Console.WriteLine("Peek after Dequeue is :" + q.Peek());
 
+            Console.WriteLine(ValidateBrackets("()[[Extra Characters]]"));
+            Console.WriteLine(ValidateBrackets("{}(){}"));
+            Console.WriteLine(ValidateBrackets("[({}]"));
+            Console.WriteLine(ValidateBrackets("("));
+            Console.WriteLine(ValidateBrackets(null));
 
         }
+        public static bool ValidateBrackets(string str)
+        {
+            if (str == null)
+                return true;
+            Stack stack = new Stack();
+            for (int i = 0; i < str.Length; i++)
+            {
+                char current = str[i];
+                if (current == '{' || current == '(' || current == '[')
+                {
+                    stack.push(current);
+                }
+                if (current == '}' || current == ')' || current == ']')
+                {
+                    if (stack.isEmpty())
+                        return false;
+
+                    char last = (char)stack.peek();
+                    if (current == '}' && last == '{' || current == ')' && last == '(' || current == ']' && last == '[')
+                        stack.pop();
+                    else
+                        return false;
+                }
+            }
+            return stack.isEmpty();
+        }
+
         public static LinkedList ZipLists(LinkedList list1, LinkedList list2)
         {
             LinkedList list3 = new LinkedList();
