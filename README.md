@@ -13,5 +13,6 @@
 | 8      | Stack and Queue Method | [Link](ConsoleApp/ConsoleApp/Challenges/stacksandqueues/README.md) |
 | 9      | Stack and Queue Pseudo Method | [Link](ConsoleApp/ConsoleApp/Challenges/stackqueuepseudo/README.md) |
 | 10     | Stack Queue Animal Shelter | [Link](ConsoleApp/ConsoleApp/Challenges/stack-queue-animal-shelter/README.md) |
+| 11     | Multi-bracket Validation  | [Link](ConsoleApp/ConsoleApp/Challenges/multi-bracket-validation/README.md) |
 
 
