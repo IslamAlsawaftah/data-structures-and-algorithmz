@@ -1,8 +1,10 @@
-﻿using ConsoleApp.Challenges.linkedlist;
+﻿using ConsoleApp.Challenges.binary_tree_and_bst;
+using ConsoleApp.Challenges.linkedlist;
 using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
 
 using System;
+using System.Collections.Generic;
 //using System.Collections.Generic;
 
 namespace ConsoleApp
@@ -12,6 +14,58 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            BinaryTree tree = new BinaryTree();
+            tree.Root = new NodeBT(1);
+            tree.Root.Left = new NodeBT(2);
+            tree.Root.Right = new NodeBT(3);
+            tree.Root.Left.Left = new NodeBT(4);
+            tree.Root.Left.Right = new NodeBT(5);
+          
+            Console.WriteLine("Preorder traversal of binary tree is ");
+            int[] arr = tree.PreOrder(tree.Root);
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            tree.list.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("Inorder traversal of binary tree is ");
+            int[] arr2 = tree.InOrder(tree.Root);
+
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.Write(arr2[i] + " ");
+            }
+            tree.list.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("Postorder traversal of binary tree is ");
+            int[] arr3 = tree.PostOrder(tree.Root);
+
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                Console.Write(arr3[i] + " ");
+            }
+            Console.WriteLine();
+
+         
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            binarySearchTree.Add(10);
+            binarySearchTree.Add(15);
+            binarySearchTree.Add(35);
+            binarySearchTree.Add(26);
+            binarySearchTree.Add(47);
+
+            int[] arr4 =  binarySearchTree.PreOrder(binarySearchTree.Root);
+            for(int i = 0; i < arr4.Length; i++)
+            {
+                Console.Write(arr4[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine(binarySearchTree.Contains(0));
+
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
             list1.Insert(1);
@@ -52,11 +106,11 @@ namespace ConsoleApp
             q.Dequeue();
             //Console.WriteLine("Peek after Dequeue is :" + q.Peek());
 
-            Console.WriteLine(ValidateBrackets("()[[Extra Characters]]"));
-            Console.WriteLine(ValidateBrackets("{}(){}"));
-            Console.WriteLine(ValidateBrackets("[({}]"));
-            Console.WriteLine(ValidateBrackets("("));
-            Console.WriteLine(ValidateBrackets(null));
+            //Console.WriteLine(ValidateBrackets("()[[Extra Characters]]"));
+            //Console.WriteLine(ValidateBrackets("{}(){}"));
+            //Console.WriteLine(ValidateBrackets("[({}]"));
+            //Console.WriteLine(ValidateBrackets("("));
+            //Console.WriteLine(ValidateBrackets(null));
 
         }
         public static bool ValidateBrackets(string str)
