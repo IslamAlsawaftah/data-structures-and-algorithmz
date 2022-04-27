@@ -70,5 +70,36 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 			list.Add(Root.Value);
 			return list.ToArray();
 		}
+		public int FindMax()
+		{
+			var result = Root.Value;
+			var q = new Queue();
+			// Add first node of tree
+			q.Enqueue(Root);
+
+			while (q.Count !=0)
+			{
+				NodeBT node = (NodeBT)q.Peek(); // Get new head
+
+				if (node.Left != null)
+				{
+					// Add left child value
+					q.Enqueue(node.Left);
+				}
+				if (node.Right != null)
+				{
+					// Add right child value
+					q.Enqueue(node.Right);
+				}
+				// Check that node value is greater than or not
+				if (node.Value > result)
+				{
+					result = node.Value;
+				}
+				// Remove element of queue
+				q.Dequeue();
+			}
+			return result;
+		}
 	}
 }

@@ -17,10 +17,12 @@ namespace ConsoleApp
             BinaryTree tree = new BinaryTree();
             tree.Root = new NodeBT(1);
             tree.Root.Left = new NodeBT(2);
-            tree.Root.Right = new NodeBT(3);
+            tree.Root.Right = new NodeBT(13);
             tree.Root.Left.Left = new NodeBT(4);
             tree.Root.Left.Right = new NodeBT(5);
-          
+
+
+
             Console.WriteLine("Preorder traversal of binary tree is ");
             int[] arr = tree.PreOrder(tree.Root);
 
@@ -65,6 +67,10 @@ namespace ConsoleApp
             }
             Console.WriteLine();
             Console.WriteLine(binarySearchTree.Contains(0));
+
+            Console.WriteLine();
+            Console.WriteLine("Maximum value in BT is " + tree.FindMax());
+
 
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
