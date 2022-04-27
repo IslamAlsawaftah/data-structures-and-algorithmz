@@ -15,4 +15,4 @@
 | 10     | Stack Queue Animal Shelter | [Link](ConsoleApp/ConsoleApp/Challenges/stack-queue-animal-shelter/README.md) |
 | 11     | Multi-bracket Validation  | [Link](ConsoleApp/ConsoleApp/Challenges/multi-bracket-validation/README.md) |
 | 12     | Binary Tree and BST Implementation | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README.md) |
-
+| 13     | Maximum Value in a Binary Tree | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README2.md) |
