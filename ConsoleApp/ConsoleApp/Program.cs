@@ -51,8 +51,7 @@ namespace ConsoleApp
                 Console.Write(arr3[i] + " ");
             }
             Console.WriteLine();
-
-         
+          
             BinarySearchTree binarySearchTree = new BinarySearchTree();
             binarySearchTree.Add(10);
             binarySearchTree.Add(15);
@@ -61,6 +60,7 @@ namespace ConsoleApp
             binarySearchTree.Add(47);
 
             int[] arr4 =  binarySearchTree.PreOrder(binarySearchTree.Root);
+            Console.WriteLine("Binary Search Tree Values");
             for(int i = 0; i < arr4.Length; i++)
             {
                 Console.Write(arr4[i] + " ");
@@ -68,9 +68,14 @@ namespace ConsoleApp
             Console.WriteLine();
             Console.WriteLine(binarySearchTree.Contains(0));
 
-            Console.WriteLine();
             Console.WriteLine("Maximum value in BT is " + tree.FindMax());
 
+            List<int> result = tree.BreadthFirst(tree);
+            Console.WriteLine("Breadth First Values");
+            for (int i = 0; i < result.Count; i++)
+            {
+                Console.Write(result[i] + " ");
+            }
 
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
