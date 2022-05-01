@@ -4,7 +4,7 @@ Find the Maximum Value in a Binary Tree
 
 # Whiteboard
 
-![](Whiteboard.png)
+![](findmax-whiteboard.png)
 
 # Approach & Efficiency
 
