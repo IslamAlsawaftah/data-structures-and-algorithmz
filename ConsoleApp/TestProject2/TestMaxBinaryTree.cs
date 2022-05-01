@@ -31,5 +31,13 @@ namespace TestProject2
             tree.Root.Left.Right = new NodeBT(5);
             Assert.NotEqual(5, tree.FindMax());
         }
+        [Fact]
+        public void Test_Max_Binary_Tree3()
+        {
+            BinaryTree tree = new BinaryTree();
+            Exception ex = Assert.Throws<Exception>(() => tree.FindMax());
+            Assert.Equal("Tree is empty", ex.Message);
+
+        }
     }
 }

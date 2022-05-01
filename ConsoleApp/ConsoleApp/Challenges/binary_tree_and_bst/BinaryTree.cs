@@ -72,7 +72,11 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 		}
 		public int FindMax()
 		{
-		
+			if(Root == null)
+            {
+				throw new Exception("Tree is empty");
+            }
+
 			var result = Root.Value;
 			var q = new Queue();
 			// Add first node of tree
