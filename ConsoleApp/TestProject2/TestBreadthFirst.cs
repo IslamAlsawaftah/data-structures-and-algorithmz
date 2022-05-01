@@ -28,5 +28,13 @@ namespace TestProject2
 
             Assert.Equal(list, tree.BreadthFirst(tree));
         }
+        [Fact]
+        public void Test_Max_Binary_Tree3()
+        {
+            BinaryTree tree = new BinaryTree();
+            Exception ex = Assert.Throws<Exception>(() => tree.BreadthFirst(tree));
+            Assert.Equal("Tree is empty", ex.Message);
+
+        }
     }
 }
