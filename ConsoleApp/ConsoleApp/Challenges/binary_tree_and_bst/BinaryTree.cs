@@ -72,6 +72,7 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 		}
 		public int FindMax()
 		{
+		
 			var result = Root.Value;
 			var q = new Queue();
 			// Add first node of tree
@@ -103,6 +104,10 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 		}
 		public List<int> BreadthFirst(BinaryTree tree)
         {
+			if (Root == null)
+			{
+				throw new Exception("Tree is empty");
+			}
 			Queue<NodeBT> q = new Queue<NodeBT>();
 			List<int> result = new List<int>();
 			q.Enqueue(tree.Root);
