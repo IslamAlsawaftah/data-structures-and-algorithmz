@@ -76,6 +76,7 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
             {
 				throw new Exception("Tree is empty");
             }
+
 			var result = Root.Value;
 			var q = new Queue();
 			// Add first node of tree
@@ -102,6 +103,35 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 				}
 				// Remove element of queue
 				q.Dequeue();
+			}
+			return result;
+		}
+		public List<int> BreadthFirst(BinaryTree tree)
+        {
+			if (Root == null)
+			{
+				throw new Exception("Tree is empty");
+			}
+			Queue<NodeBT> q = new Queue<NodeBT>();
+			List<int> result = new List<int>();
+			q.Enqueue(tree.Root);
+			while (q.Count > 0)
+			{
+				NodeBT Front = q.Peek();
+				result.Add(Front.Value);
+				q.Dequeue();
+				if (Front == null)
+                {
+					continue;
+				}
+				if (Front.Left != null)
+                {
+					q.Enqueue(Front.Left);
+				}
+				if (Front.Right != null)
+				{
+					q.Enqueue(Front.Right);
+				}
 			}
 			return result;
 		}
