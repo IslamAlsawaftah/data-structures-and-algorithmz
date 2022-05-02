@@ -17,7 +17,7 @@
 | 12     | Binary Tree and BST Implementation | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README.md) |
 | 13     | Maximum Value in a Binary Tree | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README2.md) |
 | 14     | Breadth-first Traversal        | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README3.md) |
-
+| 15     | FizzBuzz on a k-ary tree       | [Link](ConsoleApp/ConsoleApp/Challenges/FizzBuzz-k-ary-tree/README.md) |
  
 
 
