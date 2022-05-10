@@ -78,7 +78,14 @@ namespace ConsoleApp
                 Console.Write(result[i] + " ");
             }
             Console.WriteLine() ;
-            
+
+            Console.WriteLine("Kary tree");
+
+            KaryTree karyTree = new KaryTree();
+            karyTree.Root = new NodeFB(15);
+            KaryTree tree1 = KaryTree.FizzBuzzTree(karyTree);
+            Console.WriteLine(tree1.Root.Value);
+
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
             list1.Insert(1);

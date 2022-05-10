@@ -49,11 +49,16 @@ namespace ConsoleApp.Challenges.FizzBuzz_k_ary_tree
 					//RootFB.Value = RootFB.Value.ToString();
 					node2.Value = $"{node2.Value}";
 				}
-				foreach(var child in node.Children)
-                {	
-					node2.AddChild(child.Value);
-					CheckFizzBuzz(child,node2);
-				}
+                //foreach(var child in node.Children)
+                //            {	
+                //	node2.AddChild(child.Value);
+                //	CheckFizzBuzz(child,node2);
+                //}
+                for (int i = 0; i < node.Children.Count; i++)
+                {
+					node2.AddChild(node.Children[i].Value);
+					CheckFizzBuzz(node.Children[i],node2.Children[i]);
+                }
 			}
 		}
 	}
