@@ -1,19 +1,25 @@
-﻿using System;
+﻿using ConsoleApp.Challenges.FizzBuzz_k_ary_tree;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp.Challenges.binary_tree_and_bst
 {
+
 	public class BinaryTree
 	{
 		// Root of Binary Tree
 		public NodeBT Root;
 		public List<int> list = new List<int>();
+
+
 		public BinaryTree()
 		{
 			// Set initial tree root
 			Root = null;
 		}
+
 		public int[] PreOrder(NodeBT Root)
 		{
 			if (Root == null)
@@ -135,51 +141,6 @@ namespace ConsoleApp.Challenges.binary_tree_and_bst
 			}
 			return result;
 		}
-		// method that creates a reference node to the Root
-		public void FizzBuzzTree(BinaryTree tree)
-		{
-			Traverse(tree.Root);
-		}
-		// 1- check if the node value meets any of conditions and update the value.
-		// 2- call FizzBuzz method until there is no more Left node
-		// 3- call FizzBuzz method until there is no more Right node
-		public List<string> Traverse(NodeBT node)
-		{
-			if (Root == null)
-			{
-				throw new Exception("Tree is empty");
-			}
-			
-			List<string> listTree = new List<string>();
-			if (node.Value % 15 == 0)
-			{
-				listTree.Add("FizzBuzz");
-				Console.WriteLine($"{node.Value}: FizzBuzz");
-			}
-			else if (node.Value % 5 == 0)
-			{
-				listTree.Add("Buzz");
-				Console.WriteLine($"{ node.Value}: Buzz");
-			}
-			else if (node.Value % 3 == 0)
-			{
-				listTree.Add("Fizz");
-				Console.WriteLine($"{ node.Value}: Fizz");
-			}
-			else
-			{
-				listTree.Add($"{node.Value}");
-				Console.WriteLine($"{node.Value}:\'{node.Value}\'");
-			}
-			if (node.Left != null)
-			{
-				Traverse(node.Left);
-			}
-			if (node.Right != null)
-			{
-				Traverse(node.Right);
-			}
-			return listTree;
-		}
+
 	}
 }
