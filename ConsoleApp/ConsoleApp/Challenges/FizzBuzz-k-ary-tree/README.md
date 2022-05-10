@@ -12,7 +12,7 @@
 
 # Whiteboard Process
 
-![](Whiteboard-FizzBuzz.png)
+![](Whiteboard.png)
 
 # Approach & Efficiency
 
@@ -20,6 +20,3 @@ Time Complexity : O(n)
 
 Space Complexity : O(n)
 
-# Solution
-
-![](fizzbuzz-result.png)

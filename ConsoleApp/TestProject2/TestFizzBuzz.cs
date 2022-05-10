@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.Challenges.binary_tree_and_bst;
+using ConsoleApp.Challenges.FizzBuzz_k_ary_tree;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,93 +10,41 @@ namespace TestProject2
 {
     public class TestFizzBuzz
     {
-        [Fact]
-        public void Test_Empty_FizzBuzz_Tree()
-        {
-            BinaryTree tree = new BinaryTree();
-            Exception ex = Assert.Throws<Exception>(() => tree.FizzBuzzTree(tree));
-            Assert.Equal("Tree is empty", ex.Message);
 
-        }
         [Fact]
         public void Test_FizzBuzz()
         {
-            NodeBT node1 = new NodeBT(50);
-            NodeBT node2 = new NodeBT(15);
-            NodeBT node3 = new NodeBT(5);
-            NodeBT node4 = new NodeBT(18);
-            NodeBT node5 = new NodeBT(10);
-            NodeBT node6 = new NodeBT(14);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeBT(12);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            List<string> expected = new List<string>() { "Fizz" }; 
-            Assert.Equal(expected, fizzBuzz.Traverse(fizzBuzz.Root));
-        }
-        [Fact]
-        public void Test_FizzBuzz1()
-        {
-            NodeBT node1 = new NodeBT(50);
-            NodeBT node2 = new NodeBT(15);
-            NodeBT node3 = new NodeBT(5);
-            NodeBT node4 = new NodeBT(18);
-            NodeBT node5 = new NodeBT(10);
-            NodeBT node6 = new NodeBT(14);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeBT(10);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            List<string> expected = new List<string>() { "Buzz" };
-            Assert.Equal(expected, fizzBuzz.Traverse(fizzBuzz.Root));
+            KaryTree tree = new KaryTree();
+            tree.Root = new NodeFB(1);
+            KaryTree fizzbuzz = KaryTree.FizzBuzzTree(tree);
+            Assert.Equal("1", fizzbuzz.Root.Value);
+            Assert.Equal(1, tree.Root.Value);
+
         }
         [Fact]
         public void Test_FizzBuzz2()
         {
-            NodeBT node1 = new NodeBT(50);
-            NodeBT node2 = new NodeBT(15);
-            NodeBT node3 = new NodeBT(5);
-            NodeBT node4 = new NodeBT(18);
-            NodeBT node5 = new NodeBT(10);
-            NodeBT node6 = new NodeBT(14);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeBT(15);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            List<string> expected = new List<string>() { "FizzBuzz" };
-            Assert.Equal(expected, fizzBuzz.Traverse(fizzBuzz.Root));
+            KaryTree tree = new KaryTree();
+            tree.Root = new NodeFB(15);
+            tree.Root.AddChild(15); // first child index 0
+            KaryTree fizzbuzz = KaryTree.FizzBuzzTree(tree); // call it with class name because it static
+            Assert.Equal("FizzBuzz", fizzbuzz.Root.Children[0].Value);
         }
         [Fact]
         public void Test_FizzBuzz3()
         {
-            NodeBT node1 = new NodeBT(50);
-            NodeBT node2 = new NodeBT(15);
-            NodeBT node3 = new NodeBT(5);
-            NodeBT node4 = new NodeBT(18);
-            NodeBT node5 = new NodeBT(10);
-            NodeBT node6 = new NodeBT(14);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeBT(14);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            List<string> expected = new List<string>() {"14"};
-            Assert.Equal(expected, fizzBuzz.Traverse(fizzBuzz.Root));
+            KaryTree tree = new KaryTree();
+            tree.Root = new NodeFB(10);
+            KaryTree fizzbuzz = KaryTree.FizzBuzzTree(tree);
+            Assert.Equal("Buzz", fizzbuzz.Root.Value);
+        }
+        [Fact]
+        public void Test_FizzBuzz4()
+        {
+            KaryTree tree = new KaryTree();
+            tree.Root = new NodeFB(21);
+            KaryTree fizzbuzz = KaryTree.FizzBuzzTree(tree);
+            Assert.Equal("Fizz", fizzbuzz.Root.Value);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.Challenges.binary_tree_and_bst;
+using ConsoleApp.Challenges.FizzBuzz_k_ary_tree;
 using ConsoleApp.Challenges.linkedlist;
 using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
@@ -77,28 +78,7 @@ namespace ConsoleApp
                 Console.Write(result[i] + " ");
             }
             Console.WriteLine() ;
-
-
-            Console.WriteLine("Fizz Buzz Tree!");
-            NodeBT node1 = new NodeBT(50);
-            NodeBT node2 = new NodeBT(15);
-            NodeBT node3 = new NodeBT(5);
-            NodeBT node4 = new NodeBT(18);
-            NodeBT node5 = new NodeBT(10);
-            NodeBT node6 = new NodeBT(14);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeBT(12);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            fizzBuzz.FizzBuzzTree(fizzBuzz);
-            Console.ReadLine();
-
-
-
+            
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
             list1.Insert(1);
