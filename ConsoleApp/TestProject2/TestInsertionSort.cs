@@ -68,5 +68,14 @@ namespace TestProject2
             Assert.Equal(result, sort.PrintArray(array));
 
         }
+        [Fact]
+        public void Test6()
+        {
+            int[] array = new int[] { };
+            InsertionSort sort = new InsertionSort();
+            Exception ex = Assert.Throws<Exception>(() => sort.Insertionsort(array));
+            Assert.Equal("Array is empty", ex.Message);
+
+        }
     }
 }

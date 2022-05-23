@@ -26,6 +26,10 @@ namespace ConsoleApp.Challenges.insertion_sort
                 }
                 arr[j + 1] = temp;
             }
+            if(arr.Length == 0)
+            {
+                throw new Exception("Array is empty");
+            }
             return arr;
         }
         public  int[] PrintArray(int[] arr)
