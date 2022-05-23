@@ -1,5 +1,6 @@
 ﻿using ConsoleApp.Challenges.binary_tree_and_bst;
 using ConsoleApp.Challenges.FizzBuzz_k_ary_tree;
+using ConsoleApp.Challenges.insertion_sort;
 using ConsoleApp.Challenges.linkedlist;
 using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
@@ -78,7 +79,29 @@ namespace ConsoleApp
                 Console.Write(result[i] + " ");
             }
             Console.WriteLine() ;
-            
+
+            //Console.WriteLine("Kary tree");
+
+            //KaryTree karyTree = new KaryTree();
+
+            //karyTree.Root = new NodeFB(15);
+
+            //KaryTree tree1 = KaryTree.FizzBuzzTree(karyTree);
+            //Console.WriteLine(tree1.Root.Value);
+
+            // Insertion Sort
+            Console.WriteLine("Array before Insertion Sort");
+            int[] array = { 12, 11, 13, 5, 6 };
+            for(int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Array After Insertion Sort");
+            InsertionSort sort = new InsertionSort();
+            sort.Insertionsort(array);
+            sort.PrintArray(array);
+
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
             list1.Insert(1);
