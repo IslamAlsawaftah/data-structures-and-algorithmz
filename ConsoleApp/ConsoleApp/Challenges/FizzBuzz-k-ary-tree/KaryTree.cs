@@ -9,11 +9,13 @@ namespace ConsoleApp.Challenges.FizzBuzz_k_ary_tree
 {
     public class KaryTree
     {
-        public NodeFB Root;
+		public NodeFB Root;
         public KaryTree()
         {
             Root = null;
-        }
+			// try to access a member—for instance,
+		   // a method or a property—on a variable that currently holds a null reference. 
+		}
 		public static KaryTree FizzBuzzTree(KaryTree tree)
 		{
 			if(tree == null)
@@ -46,14 +48,14 @@ namespace ConsoleApp.Challenges.FizzBuzz_k_ary_tree
 				}
 				else
 				{
-					//RootFB.Value = RootFB.Value.ToString();
-					node2.Value = $"{node2.Value}";
+					node2.Value = node.Value.ToString();
+					//node2.Value = $"{node2.Value}";
 				}
-				foreach(var child in node.Children)
-                {	
-					node2.AddChild(child.Value);
-					CheckFizzBuzz(child,node2);
-				}
+                for (int i = 0; i < node.Children.Count; i++)
+                {
+					node2.AddChild(node.Children[i].Value);
+					CheckFizzBuzz(node.Children[i],node2.Children[i]);
+                }
 			}
 		}
 	}
