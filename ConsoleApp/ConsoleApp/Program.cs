@@ -100,7 +100,7 @@ namespace ConsoleApp
             Console.WriteLine("Array After Insertion Sort");
             InsertionSort sort = new InsertionSort();
             sort.Insertionsort(array);
-            sort.printArray(array);
+            sort.PrintArray(array);
 
             LinkedList list1 = new LinkedList();
             list1.Insert(3);

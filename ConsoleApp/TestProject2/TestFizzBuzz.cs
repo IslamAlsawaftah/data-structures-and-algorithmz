@@ -18,7 +18,7 @@ namespace TestProject2
             tree.Root = new NodeFB(1);
             KaryTree fizzbuzz = KaryTree.FizzBuzzTree(tree);
             Assert.Equal("1", fizzbuzz.Root.Value);
-            //Assert.Equal(1, tree.Root.Value);
+            Assert.Equal(1, tree.Root.Value);
 
         }
         [Fact]

@@ -12,7 +12,7 @@ namespace ConsoleApp.Challenges.FizzBuzz_k_ary_tree
 		public NodeFB Root;
         public KaryTree()
         {
-            Root = null;
+            Root = new NodeFB(null);
 			// try to access a member—for instance,
 		   // a method or a property—on a variable that currently holds a null reference. 
 		}
