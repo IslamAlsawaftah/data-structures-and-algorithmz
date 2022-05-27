@@ -1,6 +1,7 @@
 ﻿using ConsoleApp.Challenges.binary_tree_and_bst;
 using ConsoleApp.Challenges.FizzBuzz_k_ary_tree;
 using ConsoleApp.Challenges.insertion_sort;
+using ConsoleApp.Challenges.sorting.merge;
 using ConsoleApp.Challenges.linkedlist;
 using ConsoleApp.Challenges.stackqueuepseudo;
 using ConsoleApp.Challenges.stacksandqueues;
@@ -101,6 +102,19 @@ namespace ConsoleApp
             InsertionSort sort = new InsertionSort();
             sort.Insertionsort(array);
             sort.PrintArray(array);
+
+
+
+            int[] MyArray = { 8, 4, 23, 42, 16, 15};
+            Console.Write("Array before Merge Sort\n");
+            MergeSort merge = new MergeSort();
+            merge.PrintArray(MyArray);
+
+            merge.Mergesort(MyArray);
+            Console.Write("\nArray After Merge Sort\n");
+            merge.PrintArray(MyArray);
+
+
 
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
