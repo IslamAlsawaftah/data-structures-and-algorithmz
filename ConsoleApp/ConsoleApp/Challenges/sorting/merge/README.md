@@ -35,6 +35,13 @@ ALGORITHM Merge(left, right, arr)
         else
             arr[k] <-- right[j]
             j <-- j + 1
+
+        k <-- k + 1
+
+    if i = left.length
+       set remaining entries in arr to remaining values in right
+    else
+       set remaining entries in arr to remaining values in left
 ```
 # Whiteboard Process
 
