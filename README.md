@@ -20,6 +20,7 @@
 | 15     | FizzBuzz on a k-ary tree       | [Link](ConsoleApp/ConsoleApp/Challenges/FizzBuzz-k-ary-tree/README.md) |
 | 16     | Insertion Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/insertion-sort/BLOG.md) |
 | 17     | Merge Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/sorting/merge/README.md) |
+| 18     | Quick Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/sorting/quick/README.md) |
 
 
 

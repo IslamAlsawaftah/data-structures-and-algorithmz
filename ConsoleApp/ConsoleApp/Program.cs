@@ -8,6 +8,7 @@ using ConsoleApp.Challenges.stacksandqueues;
 
 using System;
 using System.Collections.Generic;
+using ConsoleApp.Challenges.sorting.quick;
 //using System.Collections.Generic;
 
 namespace ConsoleApp
@@ -114,7 +115,14 @@ namespace ConsoleApp
             Console.Write("\nArray After Merge Sort\n");
             merge.PrintArray(MyArray);
 
+            int[] arrr = { 8, 4, 23, 42, 16, 15 };
+            QuickSort quickSort = new QuickSort();
+            Console.WriteLine("\nArray Before Quick Sort\n");
+            quickSort.PrintArray(arrr);
+            quickSort.Quicksort(arrr, 0, arrr.Length - 1);
 
+            Console.WriteLine("\nArray After Quick Sort\n");
+            quickSort.PrintArray(arrr);
 
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
