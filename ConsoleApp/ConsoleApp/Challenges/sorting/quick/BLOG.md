@@ -53,7 +53,7 @@ Step 2: Make low store the starting index of the array, low -1
 
 Step 3: Make pivot store the last index of the array
 
-Step 4: Take a variable i and initialize it to right
+Step 4: Take a variable i and initialize it to left
 
 Step 5: Traverse through the entire array using the variable i and compare each element with pivot
 
@@ -65,9 +65,9 @@ Step 8: 4 < 7 swap 8 and 4
 
 Step 9:  23 > pivot then i++,  42 > pivot then i++,  16 > pivot then i++ dont do any thing, 7<= pivot true swap.
 
-Step 8: When the loop terminates, return low + 1.
+Step 10: When the loop terminates, return low + 1.
 
-step 9: The value returned by the partitioning algorithm gives us the correct position or index of the pivot in the array. What is meant by correct position is that all elements preceding the pivot are smaller than the pivot and all the elements after the pivot are greater than it.
+step 11: The value returned by the partitioning algorithm gives us the correct position or index of the pivot in the array. What is meant by correct position is that all elements preceding the pivot are smaller than the pivot and all the elements after the pivot are greater than it.
 
 # Visual
 
