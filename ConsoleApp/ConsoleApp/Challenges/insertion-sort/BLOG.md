@@ -1,30 +1,6 @@
 # Insertion Sort
+
 ### is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
-
-# Problem Domain
-### implementation of Insertion Sort based on the pseudocode provided.
-
-# Whiteboard Process
-
-![](Whiteboard.png)
-
-# Approach & Efficiency
-
-* create method name is  InsertionSort
-
-* take an array as parameter 
-
-* loop through this array
-
-* compare the current element (temp) to its predecessor.
-
-* If the temp element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element.
-
-# Big O represents the complexity of a function that increases linearly and in direct proportion to the number of inputs.
-
-### Time Complexity: O(N^2) 
-
-### Space Complexity: O(1)
 
 # Working of Insertion Sort algorithm:
 
@@ -91,8 +67,11 @@ visual:
  
 ![](visual.png)
 
-# Result 
-![](result.png)
+# Efficency
+
+Time Complexity: O(n^2)
+
+Space Complexity: O(1)
 
 # Test 
 ![](Tests.png)
