@@ -18,7 +18,7 @@
 | 13     | Maximum Value in a Binary Tree | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README2.md) |
 | 14     | Breadth-first Traversal        | [Link](ConsoleApp/ConsoleApp/Challenges/binary_tree_and_bst/README3.md) |
 | 15     | FizzBuzz on a k-ary tree       | [Link](ConsoleApp/ConsoleApp/Challenges/FizzBuzz-k-ary-tree/README.md) |
-| 16     | Insertion Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/insertion-sort/BLOG.md) |
+| 16     | Insertion Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/insertion-sort/README.md) |
 | 17     | Merge Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/sorting/merge/README.md) |
 | 18     | Quick Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/sorting/quick/README.md) |
 
