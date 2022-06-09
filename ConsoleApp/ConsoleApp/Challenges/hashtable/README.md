@@ -32,12 +32,6 @@ Time Complexity O(1)
 
 Space Complexity O(1)
 
-### Keys():
-
-Time Complexity O()
-
-Space Complexity O()
-
 ## API
 
 1- Get(K key) : returns the value corresponding to the key if the key is present in HT (Hast Table)

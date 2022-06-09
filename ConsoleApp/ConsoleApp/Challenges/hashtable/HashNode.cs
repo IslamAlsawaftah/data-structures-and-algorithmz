@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.Challenges.hashtable
 {
-    public class HashNode<K, V>
+    public class HashNode
 	{
-        public K key;
-        public V value;
+        public int key;
+        public string value;
         // Reference to next node
-        public HashNode<K, V> next;
+        public HashNode next;
 
         // Constructor
-        public HashNode(K key, V value)
+        public HashNode(int key, string value)
         {
             this.key = key;
             this.value = value;

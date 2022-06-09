@@ -127,9 +127,6 @@ namespace ConsoleApp
 
             Console.WriteLine();
 
-            Hashtable<string,int> st = new Hashtable<string,int>();
-          
-
             LinkedList list1 = new LinkedList();
             list1.Insert(3);
             list1.Insert(1);

@@ -6,105 +6,55 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.Challenges.hashtable
 {
-    public class Hashtable<K, V>
+    public class Hashtable
     {
-
-        List<HashNode<K, V>> bucket;
-        int numBuckets;
-        int size;
-        public Hashtable()
+        public HashNode[] Table; 
+        public int size ;
+        public Hashtable(int size)
         {
-            bucket = new List<HashNode<K, V>>();
-            for (int i = 0; i < numBuckets; i++)
-            {
-                bucket.Add(null);
-            }
+            this.size = size;
+            Table = new HashNode[size];
         }
 
-        public void Set(K key, V value)
+        public void Set(int key, string value)
         {
-
-            int index = GetBucketIndex(key);
-            Console.WriteLine(index);
-            HashNode<K, V> head = bucket[index];
-            HashNode<K, V> toAdd = new HashNode<K,V>(key,value);
-            toAdd.key = key;
-            toAdd.value = value;
-            if (head == null)
+            int index = Hash(key);
+            HashNode node = new HashNode(key, value);
+            if (Table[index] == null)
             {
-                bucket.set(index, toAdd);
-                size++;
-
+                Table[index] = node;
             }
             else
             {
-                while (head != null)
+                HashNode cur = Table[index];
+                while (cur.next != null)
                 {
-                    if (head.key.Equals(key))
-                    {
-                        head.value = value;
-                        size++;
-                        break;
-                    }
-                    head = head.next;
+                    cur = cur.next;
                 }
-                if (head == null)
-                {
-                    head = bucket[index];
-                    toAdd.next = head;
-                    bucket.set(index, toAdd);
-                    size++;
-                }
-            }
-            if ((1.0 * size) / numBuckets > 0.7)
-            {
-                List<HashNode<K, V>> tmp = bucket;
-                bucket = new List<HashNode < K, V >> ();
-                numBuckets = 2 * numBuckets;
-                for (int i = 0; i < numBuckets; i++)
-                {
-                    bucket.Add(null);
-                }
-                for (HashNode<K, V> headNode:tmp)
-                {
-                    while (headNode != null)
-                    {
-                        Set(headNode.key, headNode.value);
-                        headNode = headNode.next;
-                    }
-                }
-
-
+                cur.next = new HashNode(key, value);
             }
         }
-        private int GetBucketIndex(K key)
+        public HashNode Get(int key)
         {
-            int hashCod = key.GetHashCode();
-            return Math.Abs(hashCod % numBuckets);
-        }
-        public V Get(K key)
-        {
-            int index = GetBucketIndex(key);
-            HashNode<K, V> head = bucket[index];
+            int index = Hash(key);
+            HashNode head = Table[index];
             while (head != null)
             {
                 if (head.key.Equals(key))
                 {
-                    return head.value;
+                    return head;
                 }
                 head = head.next;
             }
             return null;
         }
-        public bool Contains(K key)
+        public bool Contains(int key)
         {
             // Find head of chain for given key
-            int bucketIndex = GetBucketIndex(key);
-            int hashCode = key.GetHashCode();
+            int index = Hash(key);
+            HashNode head = Table[index];
 
-            HashNode<K, V> head = bucket[bucketIndex];
-
-            // Search key in chain
+            // Search key
             while (head != null)
             {
                 if (head.key.Equals(key))
@@ -115,13 +65,25 @@ namespace ConsoleApp.Challenges.hashtable
             // If key not found
             return false;
         }
-        public List<K> Keys()
+        public List<int> Keys()
         {
+            List<int> keys = new List<int>();
+            for (int i= 0; i< Table.Length; i++)
+            {
+                    HashNode current = Table[i];
+                    while (current != null)
+                    {
+                        keys.Add(current.key);
+                        current = current.next;
+                    }
+                }
+            
+            return keys;
         }
-        private int Hash(K key)
+        public int Hash(int key)
         {
-            int hashcode = key.GetHashCode();
-            int index = hashcode % numBuckets;
+            int hashcode = 0;
+            int index = hashcode % size;
             index = index < 0 ? index * -1 : index;
             return index;
         }
