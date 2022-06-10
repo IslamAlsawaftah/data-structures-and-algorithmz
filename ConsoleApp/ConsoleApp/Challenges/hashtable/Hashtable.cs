@@ -83,7 +83,7 @@ namespace ConsoleApp.Challenges.hashtable
         public int Hash(int key)
         {
             int hashcode = 0;
-            int index = hashcode % size;
+            int index = hashcode * 599 % size;
             index = index < 0 ? index * -1 : index;
             return index;
         }
