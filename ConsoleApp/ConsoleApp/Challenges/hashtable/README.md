@@ -43,3 +43,5 @@ Space Complexity O(1)
 4- Contains(K key) : returns boolean, indicating if the key exists in the table already.
 
 5- Keys() : returns collection of keys
+
+[Code](Hashtable.cs)
