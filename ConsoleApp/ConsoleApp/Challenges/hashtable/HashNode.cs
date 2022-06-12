@@ -8,13 +8,13 @@ namespace ConsoleApp.Challenges.hashtable
 {
     public class HashNode
 	{
-        public int key;
+        public string key;
         public string value;
         // Reference to next node
         public HashNode next;
 
         // Constructor
-        public HashNode(int key, string value)
+        public HashNode(string key, string value)
         {
             this.key = key;
             this.value = value;
