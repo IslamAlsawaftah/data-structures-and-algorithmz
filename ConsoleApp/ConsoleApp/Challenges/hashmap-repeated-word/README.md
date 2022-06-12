@@ -31,3 +31,5 @@
 to run code ctrl + f5 
 
 ![](result.png)
+
+[Code](HashmapRepeated.cs)
