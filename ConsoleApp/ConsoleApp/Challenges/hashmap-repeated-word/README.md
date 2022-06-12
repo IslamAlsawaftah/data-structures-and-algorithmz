@@ -16,10 +16,9 @@
 
 * loop through this array
 
-* if array contains word increment count else add it to dictionary
+* if get string value equal null set new value
 
-* loop to Find first repeated word.
-
+* else return string
 # Big O represents the complexity of a function that increases linearly and in direct proportion to the number of inputs.
 
 ### Time Complexity: O(n) 
