@@ -16,7 +16,7 @@ namespace ConsoleApp.Challenges.hashtable
             Table = new HashNode[size];
         }
 
-        public void Set(int key, string value)
+        public void Set(string key, string value)
         {
             int index = Hash(key);
             HashNode node = new HashNode(key, value);
@@ -34,7 +34,7 @@ namespace ConsoleApp.Challenges.hashtable
                 cur.next = new HashNode(key, value);
             }
         }
-        public HashNode Get(int key)
+        public HashNode Get(string key)
         {
             int index = Hash(key);
             HashNode head = Table[index];
@@ -48,7 +48,7 @@ namespace ConsoleApp.Challenges.hashtable
             }
             return null;
         }
-        public bool Contains(int key)
+        public bool Contains(string key)
         {
             // Find head of chain for given key
             int index = Hash(key);
@@ -65,9 +65,9 @@ namespace ConsoleApp.Challenges.hashtable
             // If key not found
             return false;
         }
-        public List<int> Keys()
+        public List<string> Keys()
         {
-            List<int> keys = new List<int>();
+            List<string> keys = new List<string>();
             for (int i= 0; i< Table.Length; i++)
             {
                     HashNode current = Table[i];
@@ -80,7 +80,7 @@ namespace ConsoleApp.Challenges.hashtable
             
             return keys;
         }
-        public int Hash(int key)
+        public int Hash(string key)
         {
             int hashcode = 0;
             int index = hashcode * 599 % size;
