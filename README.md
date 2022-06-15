@@ -23,7 +23,4 @@
 | 18     | Quick Sort       | [Link](ConsoleApp/ConsoleApp/Challenges/sorting/quick/README.md) |
 | 19     | Hash Table       | [Link](ConsoleApp/ConsoleApp/Challenges/hashtable/README.md) |
 | 20     | Hashmap Repeated Word       | [Link](ConsoleApp/ConsoleApp/Challenges/hashmap-repeated-word/README.md) |
-
-
-
-
+| 21     | Hashmap Left Join       | [Link](ConsoleApp/ConsoleApp/Challenges/hashmap-left-join/README.md) |
