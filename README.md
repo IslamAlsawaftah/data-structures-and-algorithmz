@@ -24,3 +24,4 @@
 | 19     | Hash Table       | [Link](ConsoleApp/ConsoleApp/Challenges/hashtable/README.md) |
 | 20     | Hashmap Repeated Word       | [Link](ConsoleApp/ConsoleApp/Challenges/hashmap-repeated-word/README.md) |
 | 21     | Hashmap Left Join       | [Link](ConsoleApp/ConsoleApp/Challenges/hashmap-left-join/README.md) |
+| 22     | Tree Intersection       | [Link](ConsoleApp/ConsoleApp/Challenges/tree-intersection/README.md) |
