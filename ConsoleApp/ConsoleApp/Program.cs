@@ -12,6 +12,7 @@ using ConsoleApp.Challenges.sorting.quick;
 using ConsoleApp.Challenges.hashtable;
 using ConsoleApp.Challenges.hashmap_repeated_word;
 using ConsoleApp.Challenges.hashmap_left_join;
+using ConsoleApp.Challenges.tree_intersection;
 //using System.Collections.Generic;
 
 namespace ConsoleApp
@@ -27,8 +28,6 @@ namespace ConsoleApp
             tree.Root.Right = new NodeBT(13);
             tree.Root.Left.Left = new NodeBT(4);
             tree.Root.Left.Right = new NodeBT(5);
-
-
 
             Console.WriteLine("Preorder traversal of binary tree is ");
             int[] arr = tree.PreOrder(tree.Root);
@@ -203,6 +202,35 @@ namespace ConsoleApp
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+            BinaryTree tree1 = new BinaryTree();
+            tree1.Root = new NodeBT(1);
+            tree1.Root.Left = new NodeBT(2);
+            tree1.Root.Right = new NodeBT(13);
+            tree1.Root.Left.Left = new NodeBT(4);
+            tree1.Root.Left.Right = new NodeBT(5);
+
+            BinaryTree tree2 = new BinaryTree();
+            tree2.Root = new NodeBT(2);
+            tree2.Root.Left = new NodeBT(23);
+            tree2.Root.Right = new NodeBT(3);
+            tree2.Root.Left.Left = new NodeBT(6);
+            tree2.Root.Left.Right = new NodeBT(5);
+
+            TreeIntersection tree_Intersection = new TreeIntersection();
+            List<int> intersections = tree_Intersection.Tree_Intersection(tree1, tree2);
+
+            Console.WriteLine("intersections are: ");
+            foreach (int value in intersections)
+            {
+                Console.Write(value + " ");
+            }
+
+            Console.WriteLine();
+
         }
         public static bool ValidateBrackets(string str)
         {
