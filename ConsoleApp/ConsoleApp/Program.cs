@@ -13,6 +13,7 @@ using ConsoleApp.Challenges.hashtable;
 using ConsoleApp.Challenges.hashmap_repeated_word;
 using ConsoleApp.Challenges.hashmap_left_join;
 using ConsoleApp.Challenges.tree_intersection;
+using ConsoleApp.Challenges.graph;
 //using System.Collections.Generic;
 
 namespace ConsoleApp
@@ -230,6 +231,31 @@ namespace ConsoleApp
             }
 
             Console.WriteLine();
+
+            Graph gr = new Graph(true,true);
+            int V = 5;
+            List<int>[] adj = new List<int>[V];
+            for (int i = 0; i < V; i++)
+                adj[i] = new List<int>();
+            //gr.AddNode(1);
+            //gr.AddNode(2);
+            //gr.AddNode(3);
+            //gr.AddNode(4);
+            // Adding edge as shown in the example figure
+            Vertex vertex = new Vertex(1);
+            Vertex vertex2 = new Vertex(2);
+            Vertex vertex3 = new Vertex(3);
+            Vertex vertex4 = new Vertex(4);
+            Vertex vertex5 = new Vertex(5);
+            Vertex vertex6 = new Vertex(6);
+
+            gr.AddEdge(vertex2, vertex6,7);
+            gr.AddEdge(vertex, vertex5,12);
+            gr.AddEdge(vertex4, vertex5, 2);
+            gr.AddEdge(vertex3, vertex2, 3);
+
+            Console.WriteLine("size is " + gr.Size());
+            gr.PrintGraph(adj,V);
 
         }
         public static bool ValidateBrackets(string str)
