@@ -253,7 +253,11 @@ namespace ConsoleApp
             gr.AddEdge(vertex, vertex5,12);
             gr.AddEdge(vertex4, vertex5, 2);
             gr.AddEdge(vertex3, vertex2, 3);
-
+            List<Vertex> list = gr.BreadthFirst(vertex);
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine("breadth " + list[i].value);
+            }
             Console.WriteLine("size is " + gr.Size());
             gr.PrintGraph(adj,V);
 
