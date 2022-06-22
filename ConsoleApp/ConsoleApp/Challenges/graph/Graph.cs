@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp.Challenges.graph
 {
@@ -63,6 +64,32 @@ namespace ConsoleApp.Challenges.graph
                 Console.Write("\n");
             }
             Console.Write("\n");
+        }
+        public List<Vertex> BreadthFirst(Vertex vertex)
+        {
+            List<Vertex> visitedVertices = new List<Vertex>();
+            visitedVertices.Add(vertex);
+            Queue<Vertex> visitQueue = new Queue<Vertex>();
+            visitQueue.Enqueue(vertex);
+            if(visitQueue.Count == 0)
+            {
+                throw new Exception("no nodes added");
+            }
+            while(visitQueue.Count != 0)
+            {
+                Vertex front = visitQueue.Dequeue();
+                visitedVertices.Add(front);
+                foreach(Edge child in front.edges)
+                {
+                    Vertex neighbor = child.getEnd();
+                    if (!visitedVertices.Contains(neighbor))
+                    {
+                        //visitedVertices.Add(neighbor);
+                        visitQueue.Enqueue(neighbor);
+                    }
+                }
+            }
+            return visitedVertices;
         }
     }
 }

@@ -15,7 +15,6 @@ namespace ConsoleApp.Challenges.graph
         {
             this.value = value;
             this.edges = new List<Edge>();
-
         }
         public void addEdge(Vertex endVertex, int weight)
         {

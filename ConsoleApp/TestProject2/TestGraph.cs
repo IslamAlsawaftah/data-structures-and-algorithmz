@@ -92,5 +92,40 @@ namespace TestProject2
             List<Vertex> result = graph.GetNodes();
             Assert.Null(result);
         }
+        // Breadth First Testing
+        [Fact]
+        public void TestBreadthFirst1()
+        {
+            graph.AddNode(1);
+            graph.AddNode(2);
+            Vertex vertex = new Vertex(1);
+            Vertex vertex1 = new Vertex(2);
+            graph.AddEdge(vertex, vertex1, 10);  
+            List<Vertex> list = graph.BreadthFirst(vertex);
+            List<int> res = new List<int>();
+            for (int i = 0; i < res.Count; i++)
+            {
+                res[i] = list[i].value;
+            }
+            List<int> expected = new List<int>{ 1,2};
+            Assert.Equal(expected, res);
+        }
+        [Fact]
+        public void TestBreadthFirst2()
+        {
+            graph.AddNode(1);
+            Vertex vertex = new Vertex(1);
+            List<Vertex> result = graph.BreadthFirst(vertex);
+            Assert.Equal(1, result[0].value);
+        }
+        [Fact]
+        public void TestBreadthFirst3()
+        {
+            graph.AddNode(1);
+            Vertex vertex = new Vertex(1);
+            graph.AddEdge(vertex, vertex, 1);
+            List<Vertex> result = graph.BreadthFirst(vertex);
+            Assert.Equal(1, result[0].edges[0].getEnd().value);
+        }
     }
 }
