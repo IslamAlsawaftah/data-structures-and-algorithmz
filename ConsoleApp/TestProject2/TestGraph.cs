@@ -96,8 +96,8 @@ namespace TestProject2
         [Fact]
         public void TestBreadthFirst1()
         {
-            //graph.AddNode(1);
-            //graph.AddNode(2);
+            graph.AddNode(1);
+            graph.AddNode(2);
             Vertex vertex = new Vertex(1);
             Vertex vertex1 = new Vertex(2);
             graph.AddEdge(vertex, vertex1, 10);  
