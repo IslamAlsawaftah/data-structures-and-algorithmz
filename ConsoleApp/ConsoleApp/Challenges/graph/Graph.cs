@@ -69,8 +69,9 @@ namespace ConsoleApp.Challenges.graph
         {
             List<Vertex> visitedVertices = new List<Vertex>();
             Queue<Vertex> visitQueue = new Queue<Vertex>();
+            List<Vertex> visited = new List<Vertex>();
             visitQueue.Enqueue(vertex);
-            //visitedVertices.Add(vertex);
+            visited.Add(vertex);
             if (visitQueue.Count == 0)
             {
                 throw new Exception("no nodes added");
@@ -82,10 +83,10 @@ namespace ConsoleApp.Challenges.graph
                 foreach(Edge child in ((Vertex)front).edges)
                 {
                     Vertex neighbor = child.getEnd();
-                    if (!visitedVertices.Contains(neighbor))
+                    if (!visited.Contains(neighbor))
                     {
-                        visitedVertices.Add(neighbor);
-                        //visitQueue.Enqueue(neighbor);
+                        visited.Add(neighbor);
+                        visitQueue.Enqueue(neighbor);
                     }
                 }
             }
