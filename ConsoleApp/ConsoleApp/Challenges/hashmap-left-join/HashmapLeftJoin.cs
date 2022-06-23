@@ -26,7 +26,7 @@ namespace ConsoleApp.Challenges.hashmap_left_join
                 }
                 else
                 {
-                 list.Add( "[" + key + ":" + hashtable1.Get(key).value + "," + null + "]");
+                 list.Add( "[" + key + ":" + hashtable1.Get(key).value + "," + "null" + "]");
                 }
             }
             return list;
