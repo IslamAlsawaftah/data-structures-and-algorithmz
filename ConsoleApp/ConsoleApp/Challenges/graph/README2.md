@@ -17,22 +17,27 @@ Implement a breadth-first traversal on a graph.
 ## Solution
 
 ```
-  public List<Vertex> BreadthFirst(Vertex vertex)
+   public List<Vertex> BreadthFirst(Vertex vertex)
         {
             List<Vertex> visitedVertices = new List<Vertex>();
-            visitedVertices.Add(vertex);
             Queue<Vertex> visitQueue = new Queue<Vertex>();
+            List<Vertex> visited = new List<Vertex>();
             visitQueue.Enqueue(vertex);
+            visited.Add(vertex);
+            if (visitQueue.Count == 0)
+            {
+                throw new Exception("no nodes added");
+            }
             while(visitQueue.Count != 0)
             {
                 Vertex front = visitQueue.Dequeue();
                 visitedVertices.Add(front);
-                foreach(Edge child in front.edges)
+                foreach(Edge child in ((Vertex)front).edges)
                 {
                     Vertex neighbor = child.getEnd();
-                    if (!visitedVertices.Contains(neighbor))
+                    if (!visited.Contains(neighbor))
                     {
-                        //visitedVertices.Add(neighbor);
+                        visited.Add(neighbor);
                         visitQueue.Enqueue(neighbor);
                     }
                 }
