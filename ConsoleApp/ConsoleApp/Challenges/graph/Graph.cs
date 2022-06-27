@@ -53,7 +53,7 @@ namespace ConsoleApp.Challenges.graph
         {
             return vertices.Count;
         }
-        
+
         public void PrintGraph(List<int>[] adj, int V)
         {
             for (int v = 0; v < V; ++v)
@@ -76,11 +76,11 @@ namespace ConsoleApp.Challenges.graph
             {
                 throw new Exception("no nodes added");
             }
-            while(visitQueue.Count != 0)
+            while (visitQueue.Count != 0)
             {
                 Vertex front = visitQueue.Dequeue();
                 visitedVertices.Add(front);
-                foreach(Edge child in ((Vertex)front).edges)
+                foreach (Edge child in ((Vertex)front).edges)
                 {
                     Vertex neighbor = child.getEnd();
                     if (!visited.Contains(neighbor))
@@ -91,6 +91,27 @@ namespace ConsoleApp.Challenges.graph
                 }
             }
             return visitedVertices;
+        }
+        public int? BusinessTrip(Graph graph, int[] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return null;
+            }
+            var total = 0;
+            for (int i = 0; i < arr.Length - 1; i += 1)
+            {
+                var neighbors = graph.GetNeighbors(arr[i]);
+                for (var j = 0; j < neighbors.Count; j += 1)
+                {
+                    var nextValue = arr[i + 1];
+                    if (neighbors[j].getEnd().value == nextValue)
+                    {
+                        total += neighbors[j].getWeight();
+                    }
+                }
+            }
+          return total;
         }
     }
 }
