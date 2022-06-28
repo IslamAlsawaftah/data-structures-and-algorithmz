@@ -4,6 +4,8 @@ a function called business trip, return the cost of the trip (if it’s possible) 
 
 # Whiteboard Process
 
+![](Whiteboard2.png)
+
 # Approach & Efficiency
 
 * create a method called GetVertexByValue which is return a vertex
