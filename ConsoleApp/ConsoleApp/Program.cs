@@ -242,26 +242,47 @@ namespace ConsoleApp
             //gr.AddNode(3);
             //gr.AddNode(4);
             // Adding edge as shown in the example figure
-            Vertex vertex = new Vertex(1);
-            Vertex vertex2 = new Vertex(2);
-            Vertex vertex3 = new Vertex(3);
-            Vertex vertex4 = new Vertex(4);
-            Vertex vertex5 = new Vertex(5);
-            Vertex vertex6 = new Vertex(6);
+            //Vertex vertex = new Vertex(1);
+            //Vertex vertex2 = new Vertex(2);
+            //Vertex vertex3 = new Vertex(3);
+            //Vertex vertex4 = new Vertex(4);
+            //Vertex vertex5 = new Vertex(5);
+            //Vertex vertex6 = new Vertex(6);
 
-            gr.AddEdge(vertex2, vertex6,7);
-            gr.AddEdge(vertex, vertex5,12);
-            gr.AddEdge(vertex4, vertex5, 2);
-            gr.AddEdge(vertex3, vertex2, 3);
-            List<Vertex> list = gr.BreadthFirst(vertex);
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine("breadth " + list[i].value);
-            }
-            Console.WriteLine("size is " + gr.Size());
-            gr.PrintGraph(adj,V);
-
+            //gr.AddEdge(vertex2, vertex6,7);
+            //gr.AddEdge(vertex, vertex5,12);
+            //gr.AddEdge(vertex4, vertex5, 2);
+            //gr.AddEdge(vertex3, vertex2, 3);
+            //List<Vertex> list = gr.BreadthFirst(vertex);
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine("breadth " + list[i].value);
+            //}
+            //Console.WriteLine("size is " + gr.Size());
+            //gr.PrintGraph(adj,V);
+            Graph graph = new Graph(true,true);
+            //graph.AddNode("Pandora");
+            //graph.AddNode("Arendelle");
+            //graph.AddNode("Metroville");
+            //graph.AddNode("Monstroplolis");
+            //graph.AddNode("Narnia");
+            //graph.AddNode("Naboo");
+            Vertex vertex = new Vertex("Pandora");
+            Vertex vertex2 = new Vertex("Arendelle");
+            Vertex vertex3 = new Vertex("Metroville");
+            Vertex vertex4 = new Vertex("Monstroplolis");
+            Vertex vertex5 = new Vertex("Narnia");
+            Vertex vertex6 = new Vertex("Naboo");
+            graph.AddEdge(vertex, vertex2, 150);
+            graph.AddEdge(vertex, vertex3, 99);
+            graph.AddEdge(vertex2, vertex4, 42);
+            graph.AddEdge(vertex3, vertex5, 37);
+            graph.AddEdge(vertex3, vertex, 82);
+            graph.AddEdge(vertex6, vertex4, 73);
+            string[] arrays = { "Pandora", "Arendelle", "Metroville" };
+            Console.WriteLine("result is " + graph.BusinessTrip(graph, arrays));
         }
+      
         public static bool ValidateBrackets(string str)
         {
             if (str == null)
