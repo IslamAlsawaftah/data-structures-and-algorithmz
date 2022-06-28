@@ -26,8 +26,8 @@
 | 21     | Hashmap Left Join       | [Link](ConsoleApp/ConsoleApp/Challenges/hashmap-left-join/README.md) |
 | 22     | Tree Intersection       | [Link](ConsoleApp/ConsoleApp/Challenges/tree-intersection/README.md) |
 | 23     | Graph       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README.md) |
-| 23     | Graph Breadth First       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README2.md) |
-| 23     | Business Trip       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README3.md) |
+| 24    | Graph Breadth First       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README2.md) |
+| 25     | Business Trip       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README3.md) |
 
 
 

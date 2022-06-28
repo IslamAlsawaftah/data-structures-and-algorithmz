@@ -15,7 +15,7 @@ namespace ConsoleApp.Challenges.graph
             this.isWeighted = inputIsWeighted;
             this.isDirected = inputIsDirected;
         }
-        public Vertex AddNode(int val)
+        public Vertex AddNode(string val)
         {
             Vertex newvertex = new Vertex(val);
             vertices.Add(newvertex);
@@ -47,7 +47,8 @@ namespace ConsoleApp.Challenges.graph
         }
         public List<Edge> GetNeighbors(Vertex node)
         {
-            return vertices.Find(v => v.value == node.value).edges;
+            var neighbors =  vertices.Find(v => v.value == node.value).edges;
+            return neighbors;
         }
         public int Size()
         {
@@ -92,26 +93,41 @@ namespace ConsoleApp.Challenges.graph
             }
             return visitedVertices;
         }
-        public int? BusinessTrip(Graph graph, int[] arr)
+        public Vertex GetVertexByValue(string value)
         {
-            if (arr.Length == 0)
+            foreach (Vertex vertex in vertices)
+
             {
-                return null;
-            }
-            var total = 0;
-            for (int i = 0; i < arr.Length - 1; i += 1)
-            {
-                var neighbors = graph.GetNeighbors(arr[i]);
-                for (var j = 0; j < neighbors.Count; j += 1)
+                if (vertex.value == value)
                 {
-                    var nextValue = arr[i + 1];
-                    if (neighbors[j].getEnd().value == nextValue)
+                    return vertex;
+                }
+            }
+            return null;
+        }
+        public int? BusinessTrip(Graph graph, string[] cities)
+        {
+            var total = 0;
+            for (int i = 0; i < cities.Length - 1; i++)
+            {
+                Vertex vertex = graph.GetVertexByValue(cities[i]);
+                List<Edge> neighbors = graph.GetNeighbors(vertex);
+                for (var j = 0; j < neighbors.Count; j++)
+                {
+                    if (neighbors[j].getStart().value == vertex.value)
                     {
                         total += neighbors[j].getWeight();
                     }
                 }
             }
-          return total;
+            if (total == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return total;
+            }
         }
     }
 }

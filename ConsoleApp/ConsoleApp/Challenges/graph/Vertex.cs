@@ -8,10 +8,10 @@ namespace ConsoleApp.Challenges.graph
 {
     public class Vertex
     {
-        public int value { get; set; }
+        public string value { get; set; }
         public List<Edge> edges;
 
-        public Vertex(int value)
+        public Vertex(string value)
         {
             this.value = value;
             this.edges = new List<Edge>();
