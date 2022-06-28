@@ -129,5 +129,28 @@ namespace ConsoleApp.Challenges.graph
                 return total;
             }
         }
+        public List<Vertex> DepthFirst(Vertex root)
+        {
+            List<Vertex> visited = new List<Vertex>();
+            Stack<Vertex> stack = new Stack<Vertex>();
+            stack.Push(root);
+            visited.Add(root);
+            while (stack.Count != 0)
+            {
+                Vertex vertex = stack.Pop();
+
+                    foreach (Edge edge in GetNeighbors(vertex))
+                    {
+                    Vertex neighbor = edge.getEnd();
+
+                    if (!visited.Contains(neighbor))
+                    {
+                        visited.Add(neighbor);
+                        stack.Push(neighbor);
+                    }
+                }
+            }
+            return visited;
+        }
     }
 }
