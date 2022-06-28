@@ -28,6 +28,7 @@
 | 23     | Graph       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README.md) |
 | 24    | Graph Breadth First       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README2.md) |
 | 25     | Business Trip       | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README3.md) |
+| 25     | Graph Depth First      | [Link](ConsoleApp/ConsoleApp/Challenges/graph/README4.md) |
 
 
 
